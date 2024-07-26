@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Function to print Fibonacci series up to n terms
+void printFibonacci(int n) {
+    int t1 = 0, t2 = 1, nextTerm;
+
+    printf("Fibonacci Series: %d %d ", t1, t2);
+
+    for (int i = 2; i < n; ++i) {
+        nextTerm = t1 + t2;
+        printf("%d ", nextTerm);
+        t1 = t2;
+        t2 = nextTerm;
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Enter a positive number: ");
+    scanf("%d", &n);
+
+    if (n < 2) {
+        printf("The number of terms should be at least 2.\n");
+    } else {
+        printFibonacci(n);
+    }
+
+    return 0;
+}
